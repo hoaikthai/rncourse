@@ -3,9 +3,11 @@ import { View, Text } from 'react-native';
 
 class FindPlaceScreen extends Component {
   render () {
-    <View>
-      <Text>On find place screen</Text>
-    </View>
+    return (
+      <View>
+        <Text>On find place screen</Text>
+      </View>
+    );
   }   
 }
 

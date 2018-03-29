@@ -3,9 +3,11 @@ import { View, Text } from 'react-native';
 
 class SharePlaceScreen extends Component {
   render () {
-    <View>
-      <Text>On share place screen</Text>
-    </View>
+    return (
+      <View>
+        <Text>On find place screen</Text>
+      </View>
+    );
   }   
 }
 

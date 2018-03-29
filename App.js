@@ -1,8 +1,8 @@
 import { Navigation } from 'react-native-navigation';
 
 import AuthScreen from './src/screens/Auth/Auth';
-import SharePlaceScreen from './src/screens/SharePlace/SharePlaceScreen';
-import FindPlaceScreen from './src/screens/FindPlace/FindPlaceScreen';
+import SharePlaceScreen from './src/screens/SharePlace/SharePlace';
+import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
 
 // Register Screens
 Navigation.registerComponent("awesome-places.AuthScreen", () => AuthScreen);
