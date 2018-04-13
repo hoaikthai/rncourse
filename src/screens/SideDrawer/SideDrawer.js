@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Platform } from 'react-native';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 class SideDrawer extends Component {
   render() {
     return(
@@ -9,7 +11,12 @@ class SideDrawer extends Component {
           { width: Dimensions.get("window").width * 0.8 }
         ]}
       >
-        <Text>SideDrawer</Text>
+        <TouchableOpacity>
+          <View style={styles.drawerItem}>
+            <Icon name={Platform.OS === 'android' ? "md-log-out" : "ios-log-out"} size={30} color="#bbb" style={styles.drawItemIcon} />
+            <Text>Sign Out</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -17,9 +24,18 @@ class SideDrawer extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 22,
+    paddingTop: 40,
     backgroundColor: "white",
     flex: 1
+  },
+  drawerItem: {
+    flexDirection: "row",
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: '#eee'
+  },
+  drawItemIcon: {
+    marginRight: 10
   }
 });
 
