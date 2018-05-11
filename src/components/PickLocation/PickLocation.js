@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import { View, Image, Button, StyleSheet, Text } from 'react-native';
+import { View, Image, Button, StyleSheet, Text, Dimensions } from 'react-native';
 
-import imagePlaceHolder from '../../assets/beautiful-place.jpg';
+import MapView from 'react-native-maps';
 
 class PickLocation extends Component {
+  state = {
+    focusedLocation: {
+      latitude: 16.059768,
+      longitude: 108.211737,
+      latitudeDelta: 0.0122,
+      longitudeDelta: Dimensions.get("window").width / Dimensions.get("window").height * 0.0122
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.placeholder}>
-          <Text>Image Preview!</Text>
-        </View>
+        <MapView
+          initialRegion={this.state.focusedLocation}
+          style={styles.map} />
         <View style={styles.button}>
           <Button style={styles.button} title="Locate me" onPress={() => alert('locate')}/>
         </View>
@@ -23,12 +31,9 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: 'center'
   },
-  placeholder: {
-    borderWidth: 1,
-    borderColor: "black",
-    backgroundColor: "#eee",
-    width: "80%",
-    height: 150
+  map: {
+    width: "100%",
+    height: 250
   },
   button: {
     margin: 8
